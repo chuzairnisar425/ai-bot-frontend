@@ -36,11 +36,14 @@ const OtpModal: FC<OtpModalProps> = ({ isOpen, onClose }) => {
                 title: 'Incomplete OTP',
                 text: 'Please enter all 4 digits.',
                 padding: '2em',
-                customClass: 'sweet-alerts',
+                customClass: {
+                    popup: 'sweet-alerts',
+                },
                 background: '#11001A',
-                color: '#721c24',
-                confirmButtonColor: '#d33',
+                color: '#d13141',
+                confirmButtonColor: '#c4b1ce',
             });
+
             return;
         }
 
@@ -51,10 +54,12 @@ const OtpModal: FC<OtpModalProps> = ({ isOpen, onClose }) => {
             title: 'Good job!',
             text: 'OTP Verified Successfully!',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                popup: 'sweet-alerts',
+            },
             background: '#11001A',
-            color: '#155724',
-            confirmButtonColor: '#28a745',
+            color: '#2eda56',
+            confirmButtonColor: '#c4b1ce',
         });
 
         onClose();
