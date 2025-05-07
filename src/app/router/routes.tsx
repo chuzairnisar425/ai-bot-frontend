@@ -1,8 +1,8 @@
 import { lazy } from 'react';
 
 const Login = lazy(() => import('../pages/Login/Login'));
-// const ForgetForm = lazy(() => import('../pages/ForgetPassword/ForgetForm'));
 const Register = lazy(() => import('../pages/Register/Register'));
+// const ForgetForm = lazy(() => import('../pages/ForgetPassword/ForgetForm'));
 
 const routes = [
     {
