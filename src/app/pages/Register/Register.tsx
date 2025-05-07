@@ -6,12 +6,13 @@ import { useDispatch } from 'react-redux';
 import { setPageTitle } from '../../../_theme/themeConfigSlice';
 import { Eye, EyeOff } from 'lucide-react';
 import IconArrowBackward from '../../../_theme/components/Icon/IconArrowBackward';
-
+import OtpModal from './components/OtpModal';
 const Register: FC = () => {
     const dispatch = useDispatch();
     const [step, setStep] = useState(1); // 1: info, 2: password
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const [showOtpModal, setShowOtpModal] = useState(false);
 
     useEffect(() => {
         dispatch(setPageTitle('Register'));
@@ -46,6 +47,7 @@ const Register: FC = () => {
         }),
         onSubmit: (values) => {
             console.log('Final Submission:', values);
+            setShowOtpModal(true); // Show modal after successful submit
         },
     });
 
@@ -251,6 +253,7 @@ const Register: FC = () => {
                             </div>
                         </div>
                     </div>
+                    <OtpModal isOpen={showOtpModal} onClose={() => setShowOtpModal(false)} />
                 </div>
             </div>
         </div>
