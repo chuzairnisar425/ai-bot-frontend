@@ -87,5 +87,7 @@ module.exports = {
             strategy: 'class',
         }),
         require('@tailwindcss/typography'),
+        require('daisyui'), // ✅ add this line
+
     ],
 };
