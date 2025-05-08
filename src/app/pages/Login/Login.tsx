@@ -6,11 +6,12 @@ import { useDispatch } from 'react-redux';
 import { setPageTitle } from '../../../_theme/themeConfigSlice';
 import IconArrowForward from '../../../_theme/components/Icon/IconArrowLeft';
 import { Eye, EyeOff } from 'lucide-react';
-
+import Navbar from '../../../_theme/components/Layouts/Navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
 const Login: FC = () => {
     const dispatch = useDispatch();
     const [showPassword, setShowPassword] = useState(false);
-
+    const navigate = useNavigate();
     useEffect(() => {
         dispatch(setPageTitle('Login'));
     }, [dispatch]);
@@ -26,11 +27,13 @@ const Login: FC = () => {
         }),
         onSubmit: (values) => {
             console.log('Form Submitted:', values);
+            navigate('/user/onboarding');
         },
     });
 
     return (
         <>
+            <Navbar />
             <div className=" relative min-h-screen flex items-center justify-center bg-[#12001a] text-white font-sans px-4">
                 {/* Center Blur Gradient Effect */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-40 md:w-[400px] md:h-60 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 opacity-30 blur-3xl pointer-events-none z-0"></div>
@@ -101,7 +104,7 @@ const Login: FC = () => {
                                 <label className="flex items-center space-x-2">
                                     <label className="w-12 h-6 relative">
                                         <input type="checkbox" className="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer" id="custom_switch_checkbox1" />
-                                        <span className="bg-[#d3d4d8] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                        <span className="bg-[#d3d4d8] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-[#65558F] before:transition-all before:duration-300"></span>
                                     </label>
                                     <span>Remember me</span>
                                 </label>
