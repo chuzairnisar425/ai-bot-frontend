@@ -25,6 +25,7 @@ const routes = [
         element: <Onboarding />,
         layout: 'blank',
     },
+
     ,
 ];
 

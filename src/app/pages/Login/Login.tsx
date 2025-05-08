@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import { setPageTitle } from '../../../_theme/themeConfigSlice';
 import IconArrowForward from '../../../_theme/components/Icon/IconArrowLeft';
 import { Eye, EyeOff } from 'lucide-react';
-import Navbar from '../../../_theme/components/Layouts/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 const Login: FC = () => {
     const dispatch = useDispatch();
@@ -33,7 +32,6 @@ const Login: FC = () => {
 
     return (
         <>
-            <Navbar />
             <div className=" relative min-h-screen flex items-center justify-center bg-[#12001a] text-white font-sans px-4">
                 {/* Center Blur Gradient Effect */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-40 md:w-[400px] md:h-60 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 opacity-30 blur-3xl pointer-events-none z-0"></div>
