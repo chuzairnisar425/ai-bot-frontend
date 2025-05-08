@@ -1,8 +1,7 @@
 import { lazy } from 'react';
-
 const Login = lazy(() => import('../pages/Login/Login'));
 const Register = lazy(() => import('../pages/Register/Register'));
-// const ForgetForm = lazy(() => import('../pages/ForgetPassword/ForgetForm'));
+const Onboarding = lazy(() => import('../pages/Onboarding/Onboarding'));
 
 const routes = [
     {
@@ -21,11 +20,11 @@ const routes = [
         element: <Register />,
         layout: 'blank',
     },
-    // {
-    //     path: '/auth/forgot-password',
-    //     element: <ForgetForm />,
-    //     layout: 'blank',
-    // },
+    {
+        path: '/user/onboarding',
+        element: <Onboarding />,
+        layout: 'blank',
+    },
     ,
 ];
 
